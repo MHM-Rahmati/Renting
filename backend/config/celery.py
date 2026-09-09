@@ -22,6 +22,7 @@ def debug_task(self):
 
 # This file configures Celery to work with the Django framework.
 # It sets up the default Django settings module, creates a Celery app
-# named 'renting', configures it to use Django's settings prefixed with
-# 'CELERY', and auto-discovers tasks from installed Django apps.
-# Additionally, it includes a simple debug task that prints the request details when executed.
+# instance named 'renting', configures it to use the Django settings
+# prefixed with 'CELERY', and auto-discovers tasks from all installed
+# Django apps. Additionally, it includes a debug task to verify that
+# Celery is correctly integrated and can print task request details.
