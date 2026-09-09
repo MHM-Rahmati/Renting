@@ -20,9 +20,8 @@ def debug_task(self):
     # A debug task that prints the request information.
     print(f'Request: {self.request!r}')
 
-#
 # This file configures Celery to work with the Django framework.
-# It sets up the default Django settings module, creates a Celery app
+# It sets up the default Django settings module, creates a Celery application
 # with the namespace prefix 'CELERY', automatically discovers tasks from
-# all installed Django apps, and includes a debug task for request info printing.
-#
+# all installed Django applications, and defines a debug task for
+# printing request info in the debug process.
