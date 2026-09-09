@@ -19,5 +19,5 @@ def debug_task(self):
     print(f'Request: {self.request!r}')
 
 # This file sets up Celery to work with Django by configuring
-# the Celery app instance and auto-discovering tasks from apps.
+# the Celery app instance and auto-discovering tasks from Django apps.
 # The debug_task is a simple example task to print request info.
