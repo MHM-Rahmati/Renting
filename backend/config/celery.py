@@ -16,8 +16,12 @@ app.autodiscover_tasks()
 
 @app.task(bind=True, ignore_result=True)
 def debug_task(self):
+    # A debug task that prints the request information.
     print(f'Request: {self.request!r}')
 
-# This file sets up Celery to work with Django by configuring
-# the Celery app instance and auto-discovering tasks from Django apps.
-# The debug_task is a simple example task to print request info.
+# This file configures Celery to work with Django framework.
+# It sets up the default Django settings module, creates a Celery app
+# named 'renting', configures it from Django settings, and
+# auto-discovers tasks from installed Django apps.
+# The debug_task function is a simple example Celery task which prints
+# information about the task request when executed.
