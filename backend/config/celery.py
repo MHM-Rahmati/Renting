@@ -14,14 +14,14 @@ app.config_from_object('django.conf:settings', namespace='CELERY')
 # Load task modules from all registered Django app configs.
 app.autodiscover_tasks()
 
+# Define a debug task that prints the request information.
 @app.task(bind=True, ignore_result=True)
 def debug_task(self):
     # A debug task that prints the request information.
     print(f'Request: {self.request!r}')
 
-# This file configures Celery to work with Django framework.
+# This file configures Celery to work with the Django framework.
 # It sets up the default Django settings module, creates a Celery app
-# named 'renting', configures it from Django settings, and
-# auto-discovers tasks from installed Django apps.
-# The debug_task function is a simple example Celery task which prints
-# information about the task request when executed.
+# named 'renting', configures it using Django settings, and auto-discovers
+# tasks from all installed Django apps. Additionally, it includes a simple
+# debug task that prints the request details when executed.
